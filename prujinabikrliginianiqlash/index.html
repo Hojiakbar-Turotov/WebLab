@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirLab</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://kit.fontawesome.com/8144f62fc5.js" crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <div id="fon"></div>
+    <div id="body">
+        <header id="header">
+            <navbar id="navbar">
+                <b> Mavzu: </b> Prujina bikrligini aniqlash
+            </navbar>
+            <nav id="nav"></nav>
+        </header>
+        <section id="kirish" class="d-none">
+            <p><span>Ishning maqsadi:</span> eng oddiy dinamometr prujinasining bikrligini aniqlash orqali jismlarning deformatsiyasi va bikrligi haqida tasavvurlarni kengaytirish, elastiklik kuchi haqida olingan nazariy bilimlarni mustahkamlash.
+                <br><br> <span>Kerakli jihozlar:</span> shtativ, eng oddiy dinamometr, yuklar to'plami, millimetrli qog'oz.
+                <span style="display: flex;"> <br><br><img src="./img/namuna.png" alt="bu yerda tajriba qurilmasi namunasi bor." class="img">
+                <span class="ishbt"><br><br> <span style="text-align: center; display: block;">Ishni bajarish tartibi:</span> 1. Prujinadan dinamometr yasash uchun shkalasiga millimetrli qog'oz yopishtiring.
+                <br> 2. Dinamometrni shtativga rasmda ko'rsatilgandek mahkamlang.
+                <br> 3. Dinamometr ko'rsatkichini boshlang'ich vaziyatini shkaladagi millimetrli qog'ozga belgilang.
+                <br> 4. Dinamometr ilgagiga m<sub>1</sub> massali yukni iling, uning ta'sirida prujinaning &#916;L<sub>1</sub> uzayishini o'lchang va natijani jadvalga yozing.
+                <br> 5. Massalari m<sub>2</sub> va m<sub>3</sub> bo'lgan yuk uchun ham prujinaning &#916;L<sub>2</sub>, &#916;L<sub>3</sub> cho'zilishlarini o'lchang va natijalarni jadvalga yozing.
+                <br> 6. Dinamometrga osilgan har bir yuk uchun prujinaga ta'sir etgan tashqi kuchlarni F<sub>t</sub>=mg formula bo'yicha hisoblang va natijalarni jadvalga yozing (g=9.8m/s<sup>2</sup> deb olinsin.)
+                <br> 7. Har bir o'lchangan &#916;L<sub>1</sub>, &#916;L<sub>1</sub>, &#916;L<sub>1</sub> va hisoblangan F<sub>t1</sub>=mg, F<sub>t1</sub>=mg, F<sub>t1</sub>=mg natijalarni k=F/&#916;L formulaga qo'yib, k<sub>1</sub>, k<sub>1</sub>, k<sub>1</sub>                prujinalar bikrligini hisoblang va natijalarni jadvalga yozing.
+                <br> 6. k<sub>o`rt</sub>=(k<sub>1</sub>+k<sub>2</sub>+k<sub>3</sub>)/3 formula bo'yicha prujinaning o'rtacha bikrligini hisoblang.
+                </span>
+                </span>
+                <br> 7. &#916;k<sub>n</sub>=|k<sub>o`rt</sub>-k<sub>n</sub>| formuladan absolut xatolik toping.
+                <br> 8. &#916;k<sub>o`rt</sub>=(&#916;k<sub>1</sub>+&#916;k<sub>2</sub>+&#916;k<sub>3</sub>)/3 formuladan absolut xatolikning o'rtacha qiymatini hisoblang.
+                <br> 10. &#949;=(&#916;k<sub>o`rt</sub>/k<sub>o`rt</sub>)*100% formuladan nisbiy xatolikni toping.
+                <br> 11. Natijalarni tahlil qiling va hulosa chiqaring.
+                <br> <br>
+                <table>
+                    <tr>
+                        <td>T/r</td>
+                        <td>m</td>
+                        <td>F<sub>t</sub></td>
+                        <td>&#916;L</td>
+                        <td>k</td>
+                        <td>k<sub>o`rt</sub></td>
+                        <td>&#916;k</td>
+                        <td>&#916;k<sub>o`rt</sub></td>
+                        <td>&#949;, %</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td rowspan="3"></td>
+                        <td></td>
+                        <td rowspan="3"></td>
+                        <td rowspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr style="opacity: 0;">
+                        <td>00000</td>
+                        <td>0000000000</td>
+                        <td>0000000000</td>
+                        <td>0000000000</td>
+                        <td>0000000000</td>
+                        <td>0000000000</td>
+                        <td>0000000000</td>
+                        <td>0000000000</td>
+                        <td>0000000000</td>
+                    </tr>
+                </table>
+            </p>
+            <div id="navigator">
+                <!-- <span id="prev" onclick="prev()">Orqaga</span> -->
+                <span id="next" onclick="next()">Oldinga</span>
+            </div>
+        </section>
+        <section id="boshlash">
+            <div class="d-flex">
+                <div id="animation">
+                    <div class="osma"></div>
+                    <div class="prujina">
+                        <div class="chiziqc"></div>
+                        <div class="chiziqa" style="margin-top: 10px;"></div>
+                        <div class="chiziqb"></div>
+                        <div class="chiziqa"></div>
+                        <div class="chiziqb"></div>
+                        <div class="chiziqa"></div>
+                        <div class="chiziqb"></div>
+                        <div class="chiziqa"></div>
+                        <div class="chiziqb"></div>
+                        <div class="chiziqa"></div>
+                        <div class="chiziqd"></div>
+                    </div>
+                </div>
+                <div id="result">
+                    <div id="qiyalik30">
+                        <span id="bikrlik70">50N/m&#60;k&#60;100N/m </span>
+                        <span id="massa50">m=50g</span>
+                    </div>
+                    <div id="qiyalik45">
+                        <span id="bikrlik140">100N/m&#60;k&#60;150N/m </span>
+                        <span id="massa100">m=100g</span>
+                    </div>
+                    <div id="qiyalik60">
+                        <span id="bikrlik160">150N/m&#60;k&#60;200N/m </span>
+                        <span id="massa150">m=150g</span>
+                    </div>
+                    <div id="tekshirish">
+                        <span onclick="tekshirish()">
+                        Tekshirib ko`rish
+                    </span>
+                    </div>
+                </div>
+            </div>
+            <div id="navigator">
+                <span id="prev" onclick="prev()">Orqaga</span>
+                <span id="next" onclick="next()">Oldinga</span>
+            </div>
+        </section>
+        <section id="bajarish" class="d-none">
+            <!-- <div class="d-flex">
+                <div id="animation">
+                    <div id="chiziqx"></div>
+                    <div id="chiziqy"></div>
+                    <div id="chiziqs"></div>
+                    <div id="sharcha"></div>
+                </div>
+                <div>
+                    <span onclick="natijaOlish()">Natija olish</span>
+                </div>
+            </div>
+
+            <div id="bajarishNatijalari">
+                <table>
+                    <tr>
+                        <td>T/r</td>
+                        <td>s, sm</td>
+                        <td>t<sub>1</sub>, s</td>
+                        <td>t<sub>2</sub>, s</td>
+                        <td>t<sub>3</sub>, s</td>
+                    </tr>
+
+                    <tr>
+                        <td id="tartibRaqami1Tajriba"></td>
+                        <td id="uzunlik1Tajriba"></td>
+                        <td id="vaqt1Tajriba1Natija"></td>
+                        <td id="vaqt1Tajriba2Natija"></td>
+                        <td id="vaqt1Tajriba3Natija"></td>
+                    </tr>
+                    <tr>
+                        <td id="tartibRaqami2Tajriba"></td>
+                        <td id="uzunlik2Tajriba"></td>
+                        <td id="vaqt2Tajriba1Natija"></td>
+                        <td id="vaqt2Tajriba2Natija"></td>
+                        <td id="vaqt2Tajriba3Natija"></td>
+                    </tr>
+                    <tr>
+                        <td id="tartibRaqami3Tajriba"></td>
+                        <td id="uzunlik3Tajriba"></td>
+                        <td id="vaqt3Tajriba1Natija"></td>
+                        <td id="vaqt3Tajriba2Natija"></td>
+                        <td id="vaqt3Tajriba3Natija"></td>
+                    </tr>
+                </table>
+            </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="navigator">
+                <span id="prev" onclick="prev()">Orqaga</span>
+                <span id="next" onclick="next()">Oldinga</span>
+            </div>
+        </section>
+        <section id="taxlil" class="d-none">
+            salom4
+            <div id="navigator">
+                <span id="prev" onclick="prev()">Orqaga</span>
+                <span id="next" onclick="next()">Oldinga</span>
+            </div>
+        </section>
+        <section id="hulosa" class="d-none">
+            salom
+            <div id="navigator">
+                <span id="prev" onclick="prev()">Orqaga</span>
+            </div>
+        </section>
+    </div>
+    <style id="style2all">
+
+    </style>
+    <style id="stylecss">
+        #animation {
+            position: relative;
+        }
+        
+        .prujina {
+            transform: translate(20px, 7px);
+        }
+        
+        .osma {
+            width: 70px;
+            border: 2px #000 solid;
+        }
+        
+        .chiziqa {
+            border: 2px #000 solid;
+            width: 30px;
+            transform: rotateZ(30deg);
+            margin-top: 14px;
+            display: block;
+        }
+        
+        .chiziqb {
+            border: 2px #000 solid;
+            width: 30px;
+            transform: rotateZ(-30deg);
+            margin-top: 14px;
+            display: block;
+        }
+        
+        .chiziqc {
+            border: 2px #000 solid;
+            width: 15px;
+            transform: rotateZ(-30deg);
+            margin-top: -5px;
+            margin-left: 1px;
+            display: block;
+        }
+        
+        .chiziqd {
+            border: 2px #000 solid;
+            width: 15px;
+            transform: rotateZ(-30deg);
+            margin-top: 10px;
+            margin-left: 14px;
+            display: block;
+        }
+    </style>
+    <style id="styleanimation">
+        section#animation div#sharcha {
+            animation: sharchaanimation;
+            animation-duration: 2s;
+        }
+    </style>
+    <footer id="footer">
+        <ul>
+            <li><span onclick="kirishfunction()">Kirish</span></li>
+            <li><span onclick="boshlashfunction()">Boshlash</span></li>
+            <li><span onclick="bajarishfunction()">Bajarish</span></li>
+            <li><span onclick="taxlilfunction()">Taxlil qilish</span></li>
+            <li><span onclick="hulosafunction()">Hulosa</span></li>
+        </ul>
+    </footer>
+    <!-- LOADER -->
+    <div class="loader">
+        <img class="loading" src="img/icon-wheel.svg" alt="">
+        <h2 class="title loader-title">Loading
+            <span class="loader-circle"></span>
+            <span class="loader-circle"></span>
+            <span class="loader-circle"></span>
+        </h2>
+    </div>
+    <!-- ---------------------------------------------------- -->
+    <script src="app.js"></script>
+</body>
+
+</html>
