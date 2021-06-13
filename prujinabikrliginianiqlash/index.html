@@ -101,30 +101,36 @@
                     <div class="osma"></div>
                     <div class="prujina">
                         <div class="chiziqc"></div>
-                        <div class="chiziqa" style="margin-top: 10px;"></div>
-                        <div class="chiziqb"></div>
-                        <div class="chiziqa"></div>
-                        <div class="chiziqb"></div>
-                        <div class="chiziqa"></div>
-                        <div class="chiziqb"></div>
-                        <div class="chiziqa"></div>
-                        <div class="chiziqb"></div>
-                        <div class="chiziqa"></div>
-                        <div class="chiziqd"></div>
+                        <div id="prujina">
+                            <div class="chiziqa" style="margin-top: 10px;"></div>
+                            <div class="chiziqb"></div>
+                            <div class="chiziqa"></div>
+                            <div class="chiziqb"></div>
+                            <div class="chiziqa"></div>
+                            <div class="chiziqb"></div>
+                            <div class="chiziqa"></div>
+                            <div class="chiziqb"></div>
+                            <div class="chiziqa"></div>
+                        </div>
+                        <div id="yuk">
+                            <div class="chiziqd"></div>
+                            <div class="yuk"></div>
+                        </div>
                     </div>
                 </div>
                 <div id="result">
+                    <span>Prujina bikrligini quidagi oraliqlardan biri sifatida tanlang.</span>
                     <div id="qiyalik30">
-                        <span id="bikrlik70">50N/m&#60;k&#60;100N/m </span>
+                        <span id="bikrlik70" onclick="bikrlik = 70; tanlov()">50N/m&#60;k&#60;100N/m </span>
                         <span id="massa50">m=50g</span>
                     </div>
                     <div id="qiyalik45">
-                        <span id="bikrlik140">100N/m&#60;k&#60;150N/m </span>
-                        <span id="massa100">m=100g</span>
+                        <span id="bikrlik140" onclick="bikrlik = 140; tanlov()">100N/m&#60;k&#60;150N/m </span>
+                        <!-- <span id="massa100">m=100g</span> -->
                     </div>
                     <div id="qiyalik60">
-                        <span id="bikrlik160">150N/m&#60;k&#60;200N/m </span>
-                        <span id="massa150">m=150g</span>
+                        <span id="bikrlik160" onclick="bikrlik = 160; tanlov()">150N/m&#60;k&#60;200N/m </span>
+                        <!-- <span id="massa150">m=150g</span> -->
                     </div>
                     <div id="tekshirish">
                         <span onclick="tekshirish()">
@@ -132,6 +138,9 @@
                     </span>
                     </div>
                 </div>
+                <style id="tanlov">
+
+                </style>
             </div>
             <div id="navigator">
                 <span id="prev" onclick="prev()">Orqaga</span>
@@ -267,9 +276,19 @@
         }
     </style>
     <style id="styleanimation">
-        section#animation div#sharcha {
-            animation: sharchaanimation;
-            animation-duration: 2s;
+        /*  */
+        
+        .yuk {
+            transform: translate(8px, 3.5px);
+        }
+    </style>
+    <style>
+        .yuk {
+            height: 20px;
+            width: 20px;
+            background-color: #000;
+            animation: yukm;
+            animation-duration: 10s;
         }
     </style>
     <footer id="footer">

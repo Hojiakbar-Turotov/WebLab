@@ -71,7 +71,8 @@ const absolutXatolik3Tajriba3Natija = document.getElementById('absolutXatolik3Ta
 const urtachaAbsolutXatolik3Tajriba = document.getElementById('urtachaAbsolutXatolik3Tajriba');
 const nisbiyXatolik3Tajriba = document.getElementById('nisbiyXatolik3Tajriba');
 
-
+// 
+const bikrlikstyle = document.getElementById('tanlov');
 
 
 
@@ -674,3 +675,265 @@ let sanash = 1;
 //     }
 //     // sanash++;
 // }
+
+let bikrlik = null;
+let davomiyligi = null;
+
+function tanlov() {
+    switch (bikrlik) {
+        case 70:
+            bikrlikstyle.innerHTML = `#result div span#bikrlik70{background-color: #e9ecef;}`;
+            break;
+        case 140:
+            bikrlikstyle.innerHTML = `#result div span#bikrlik140{background-color: #e9ecef;}`;
+            break;
+        case 160:
+            bikrlikstyle.innerHTML = `#result div span#bikrlik160{background-color: #e9ecef;}`;
+            break;
+    }
+}
+
+function yuqorigaharakat(davr) {
+    let davir = 1000 * davr;
+    setTimeout(pastgaharakat, davir, davr);
+    vaqt.innerHTML = `
+.prujina .chiziqb {
+    animation: chiziqa;
+    animation-duration: ${davr}s; animation-iteration-count: infinite;
+}
+
+@keyframes chiziqa {
+    0% {
+        transform: rotateZ(-30deg);
+        margin-top: 14px;
+    }
+    50% {
+        transform: rotateZ(-10deg);
+        margin-top: 2px;
+    }
+    100% {
+        transform: rotateZ(-30deg);
+        margin-top: 14px;
+    }
+}
+
+.prujina .chiziqa {
+    animation: chiziqb;
+    animation-duration: ${davr}s; animation-iteration-count: infinite;
+}
+
+@keyframes chiziqb {
+    0% {
+        margin-top: 14px;
+        transform: rotateZ(30deg);
+    }
+    50% {
+        margin-top: 2px;
+        transform: rotateZ(10deg);
+    }
+    100% {
+        margin-top: 14px;
+        transform: rotateZ(30deg);
+    }
+}
+
+.prujina #prujina {
+    animation: prujina;
+    animation-duration: ${davr}s; animation-iteration-count: infinite;
+}
+
+@keyframes prujina {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(2px, 4px);
+    }
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+#yuk {
+    animation: yuk;
+    animation-duration: ${davr}s; animation-iteration-count: infinite;
+}
+
+@keyframes yuk {
+    0% {
+        transform: translate(0, -5px);
+    }
+    50% {
+        transform: translate(3px, -4px);
+    }
+    100% {
+        transform: translate(0, -5px);
+    }
+}
+
+.chiziqd {
+    animation: chiziqd;
+    animation-duration: ${davr}s; animation-iteration-count: infinite;
+}
+
+@keyframes chiziqd {
+    0% {
+        transform: rotateZ(-30deg);
+    }
+    50% {
+        transform: rotateZ(-10deg);
+    }
+    100% {
+        transform: rotateZ(-30deg);
+    }
+}
+.yuk{
+    transform: translate(5.8px, 3.5px);
+}
+@keyframes yukm {
+    0% {
+        transform: translate(5.8px, 3.5px);
+    }
+    50% {
+        transform: translate(5.8px, 1.8px);
+    }
+    100% {
+        transform: translate(5.8px, 3.5px);
+    }
+}
+`;
+
+}
+
+function pastgaharakat(davr) {
+    vaqt.innerHTML = `
+    .prujina #prujina {
+        animation: prujina;
+        animation-duration: ${davr}s; animation-iteration-count: infinite;
+    }
+    
+    @keyframes prujina {
+        0% {
+            transform: translate(0, -5px);
+        }
+        50% {
+            transform: translate(-4.5px, -8.5px);
+        }
+        100% {
+            transform: translate(0, -5px);
+        }
+    }
+    
+    .prujina .chiziqb {
+        animation: chiziqa;
+        animation-duration: ${davr}s; animation-iteration-count: infinite;
+    }
+    
+    @keyframes chiziqa {
+        0% {
+            transform: rotateZ(-30deg);
+            margin-top: 14px;
+        }
+        50% {
+            transform: rotateZ(-60deg);
+            margin-top: 24px;
+        }
+        100% {
+            transform: rotateZ(-30deg);
+            margin-top: 14px;
+        }
+    }
+    
+    .prujina .chiziqa {
+        animation: chiziqb;
+        animation-duration: ${davr}s; animation-iteration-count: infinite;
+    }
+    
+    @keyframes chiziqb {
+        0% {
+            margin-top: 14px;
+            transform: rotateZ(30deg);
+        }
+        50% {
+            margin-top: 24px;
+            transform: rotateZ(60deg);
+        }
+        100% {
+            margin-top: 14px;
+            transform: rotateZ(30deg);
+        }
+    }
+    
+    #yuk {
+        animation: yuk;
+        animation-duration: ${davr}s; animation-iteration-count: infinite;
+    }
+    
+    @keyframes yuk {
+        0% {
+            transform: translate(0, -5px);
+        }
+        50% {
+            transform: translate(-8px, -3px);
+        }
+        100% {
+            transform: translate(0, -5px);
+        }
+    }
+    
+    .chiziqd {
+        animation: chiziqd;
+        animation-duration: ${davr}s; animation-iteration-count: infinite;
+    }
+    
+    @keyframes chiziqd {
+        0% {
+            transform: rotateZ(-30deg);
+        }
+        50% {
+            transform: rotateZ(-60deg);
+        }
+        100% {
+            transform: rotateZ(-30deg);
+        }
+    }
+    
+    .yuk{
+        transform: translate(8px, 3.5px);
+    }
+    
+    @keyframes yukm {
+        0% {
+            transform: translate(8px, 3.5px);
+        }
+        50% {
+            transform: translate(9px, 6px);
+        }
+        100% {
+            transform: translate(8px, 3.5px);
+        }
+    }
+    `;
+    let davir = 1000 * davr;
+    setTimeout(yuqorigaharakat, davir, davr);
+}
+
+function tekshirish() {
+    switch (bikrlik) {
+        case 70:
+            davomiyligi = 2;
+            pastgaharakat(davomiyligi);
+            bikrlik = null;
+            break;
+        case 140:
+            davomiyligi = 10;
+            pastgaharakat(davomiyligi);
+            bikrlik = null;
+            break;
+        case 160:
+            davomiyligi = 20;
+            pastgaharakat(davomiyligi);
+            bikrlik = null;
+            break;
+    }
+}

@@ -367,9 +367,15 @@ table {
     cursor: pointer;
 }
 
-#result div span:nth-child(1),
+
+/* #result div span:nth-child(1),
 #result div span:nth-child(2) {
     background-color: #e9ecef;
+} */
+
+#result div span#massa50 {
+    background-color: #e9ecef;
+    margin-left: 170px;
 }
 
 #result div span.active {
@@ -426,3 +432,6 @@ table {
 
 
 /* ************* */
+
+
+/* #boshlash */
